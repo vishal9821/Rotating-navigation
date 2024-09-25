@@ -1,0 +1,148 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #333;
+    color: #222;
+
+}
+
+.container{
+    background-color: #fafafa;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+}
+
+.container.show-nav{
+    transform: rotate(-20deg)
+}
+
+.container.show-nav .circle{
+    transform: rotate(-70deg)
+}
+
+.container.show-nav + nav li{
+    transform: translateX(100%);
+    transition-delay: 0.4s;
+}
+
+.content img{
+    max-width: 100%;
+    box-shadow: 8px 8px 5px #333;
+}
+
+nav{
+    position: fixed;
+    top: 70%;
+    left:-15%;
+    z-index: 100;
+}
+
+nav ul{
+    list-style-type: none;
+    margin:0;
+    padding-bottom: 20px;
+}
+
+nav ul li{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: 0.4s ease-in;
+}
+nav ul li +li{
+    padding-left: 40px;
+}
+nav ul li +li +li{
+    padding-left: 50px;
+}
+
+nav ul li i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.circle-container{
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    
+}
+
+.circle{
+    background-color: #ff7979;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    transition: transform 0.5s linear ;
+}
+
+.circle button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.circle button:focus{
+    outline: none;
+}
+
+.circle button#open{
+     left: 60%;
+}
+
+.circle button#close{
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.content{
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.content h1{
+    margin: 0;
+}
+
+.content small{
+    color: #333;
+    font-style: italic;
+}
+
+.content p{
+    line-height: 1.4;
+    color: #111;
+}
+ a{
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+ }
+
+
+ @media (max-width:480px) {
+    .container.show-nav + nav li{
+        transform: translateX(10%);
+        transition-delay: 0.4s;
+    }
+    
+ }
+
